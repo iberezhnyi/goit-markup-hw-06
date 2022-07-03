@@ -385,7 +385,7 @@
           </address>
         </div>
         <div class="footer-social">
-          <h3 class="title">присоединяйтесь</h3>
+          <b class="footer-social-title">присоединяйтесь</b>
           <ul class="list social-network-list">
             <li class="social-network">
               <a href="#" class="social-network-link social-footer-link" aria-label="Instagram"
@@ -413,6 +413,19 @@
             </li>
           </ul>
         </div>
+
+        <form class="js-speaker-form">
+          <b class="footer-social-title">Подпишитесь на рассылку</b>
+          <label>
+            <input class="subscribe-input" type="email" name="mail" placeholder="E-mail" />
+            <button class="button subscribe-button" type="submit">
+              <span class="subscribe-button-text">Подписаться</span>
+              <svg class="subscribe-button-icon">
+                <use href="./images/icons.svg#icon-send"></use>
+              </svg>
+            </button>
+          </label>
+        </form>
       </div>
     </footer>
 
@@ -424,8 +437,78 @@
             <use href="./images/icons.svg#icon-close"></use>
           </svg>
         </button>
+
+        <form>
+          <b class="form-title">Оставьте свои данные, мы вам перезвоним</b>
+
+          <label class="modal-form-label">
+            Имя
+            <input class="modal-form-input" type="text" name="name" />
+          </label>
+
+          <label class="modal-form-label">
+            Телефон
+            <input class="modal-form-input" type="tel" name="tel" />
+          </label>
+
+          <label class="modal-form-label">
+            Почта
+            <input class="modal-form-input" type="email" name="mail" />
+          </label>
+
+          <label class="modal-form-label">
+            Комментарий
+            <textarea
+              class="modal-form-comment"
+              name="comment"
+              rows="10"
+              placeholder="Введите текст"
+            ></textarea>
+          </label>
+
+          <label class="modal-form-label-policy">
+            <input type="checkbox" name="policy" />
+            Соглашаюсь с рассылкой и принимаю Условия договора
+          </label>
+
+          <button type="submit">Отправить</button>
+        </form>
+
+        <!-- <div>
+          <form>
+            <b>Оставьте свои данные, мы вам перезвоним</b>
+            <label for="name">Имя</label>
+            <input type="text" name="name" id="name" />
+
+            <label for="tel">Телефон</label>
+            <input type="tel" name="tel" id="tel" />
+
+            <label for="mail">Почта</label>
+            <input type="email" name="mail" id="mail" />
+
+            <label for="comment">Комментарий</label>
+            <textarea name="comment" id="comment" rows="10" placeholder="Введите текст"></textarea>
+
+            <input type="checkbox" name="policy" id="policy" />
+            <label for="policy">Соглашаюсь с рассылкой и принимаю Условия договора</label>
+
+            <button type="submit">Отправить</button>
+          </form>
+        </div> -->
       </div>
     </div>
+
+    <script>
+      (() => {
+        document.querySelector('.js-speaker-form').addEventListener('submit', e => {
+          e.preventDefault();
+          new FormData(e.currentTarget).forEach((value, name) =>
+            console.log(`${name}:
+    ${value}`)
+          );
+        });
+      })();
+    </script>
 
     <script src="./js/modal.js"></script>
   </body>
