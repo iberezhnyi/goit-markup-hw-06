@@ -679,8 +679,8 @@ textarea {
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   padding: 40px 39px 40px 41px;
-  min-width: 528px;
-  min-height: 581px;
+  width: 528px;
+  height: 581px;
   background-color: var(--primary-white-color);
   border-radius: 4px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -716,7 +716,7 @@ textarea {
 }
 
 /* Modal form */
-.form {
+/* .form {
   padding: 20px;
   margin: 20px;
   width: 600px;
@@ -750,23 +750,21 @@ textarea {
 .form-input:not(:placeholder-shown) + .form-label {
   color: tomato;
   transform: translate(-10px, -50px);
-}
+} */
 
-.form-input:placeholder-shown {
-  background-color: red;
-}
-
-/* .form-title {
+.form-title {
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: 30px;
   font-size: 20px;
   line-height: 1.15;
   text-align: center;
   color: var(--title-text-color);
-} */
+}
 
-/* .modal-form-label {
+.modal-form-label {
   position: relative;
+  display: block;
+  margin-bottom: 28px;
 }
 
 .modal-form-input {
@@ -774,11 +772,17 @@ textarea {
   display: block;
   width: 448px;
   height: 40px;
+  padding: 12px 12px 12px 42px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
 }
 
 .modal-form-label-text {
+  position: absolute;
+  top: 50%;
+  left: 42px;
+  transform: translateY(-50%);
+  z-index: 1;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
@@ -786,12 +790,50 @@ textarea {
 
 .modal-form-label-icon {
   position: absolute;
-  display: inline-block;
+  z-index: 1;
   top: 50%;
-  left: 10%;
+  left: 15px;
+  transform: translateY(-50%);
   width: 18px;
   height: 18px;
 }
+
+.modal-form-input:focus ~ .modal-form-label-text,
+.modal-form-input:hover ~ .modal-form-label-text,
+.modal-form-input:focus + .modal-form-label-icon,
+.modal-form-input:hover + .modal-form-label-icon {
+  fill: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.modal-form-input:not(:placeholder-shown) ~ .modal-form-label-text {
+  transform: translate(-27px, -250%);
+  color: var(--accent-color);
+}
+
+.modal-form-input:not(:placeholder-shown) + .modal-form-label-icon {
+  fill: var(--accent-color);
+}
+
+.modal-form-input:not(:placeholder-shown),
+.modal-form-input:hover,
+.modal-form-input:focus {
+  border: 1px solid var(--accent-color);
+}
+
+.modal-form-textarea {
+  display: block;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.modal-form-textarea-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* потім */
 
 .modal-form-comment {
   display: block;
@@ -805,4 +847,4 @@ textarea {
 
 .modal-form-label-policy {
   display: block;
-} */
+}

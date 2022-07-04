@@ -438,21 +438,52 @@
           </svg>
         </button>
 
-        <form class="form" autocomplete="off" >
+        <form>
+          <b class="form-title">Оставьте свои данные, мы вам перезвоним</b>
 
-          <div class="form-field">
-            <input type="text" class="form-input" name="name" id="name" placeholder="Иван Иванович" />
-            <label for="name" class="form-label">Имя</label>
-          </div>
+          <label class="modal-form-label">
+            <input class="modal-form-input" type="text" name="name" placeholder=" " />
+            <svg class="modal-form-label-icon">
+              <use href="./images/icons.svg#icon-person"></use>
+            </svg>
+            <span class="modal-form-label-text">Имя</span>
+          </label>
 
-          <div class="form-field">
-            <input type="email" class="form-input" name="mail" id="mail" placeholder="ivan@gmail.com" />
-            <label for="mail" class="form-label">Почта</label>
-          </div>
-        
-          <button type="submit">Оставить заявку</button>
+          <label class="modal-form-label">
+            <input class="modal-form-input" type="tel" name="tel" placeholder=" " />
+            <svg class="modal-form-label-icon">
+              <use href="./images/icons.svg#icon-phone"></use>
+            </svg>
+            <span class="modal-form-label-text">Телефон</span>
+          </label>
+
+          <label class="modal-form-label">
+            <input class="modal-form-input" type="email" name="mail" placeholder=" " />
+            <svg class="modal-form-label-icon">
+              <use href="./images/icons.svg#icon-email"></use>
+            </svg>
+            <span class="modal-form-label-text">Почта</span>
+          </label>
+
+          <label class="modal-form-textarea">
+            <span class="modal-form-textarea-text">Комментарий</span>
+            <textarea
+              class="modal-form-comment"
+              name="comment"
+              rows="10"
+              placeholder="Введите текст"
+            ></textarea>
+          </label>
+
+          <label class="modal-form-label-policy">
+            <input type="checkbox" name="policy" />
+            Соглашаюсь с рассылкой и принимаю
+            <a href="#"> Условия договора</a>
+          </label>
+
+          <button type="submit">Отправить</button>
         </form>
-
+        
         </div>
       </div>
     </div>
