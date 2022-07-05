@@ -310,7 +310,7 @@
           </address>
         </div>
         <div class="footer-social">
-          <h3 class="title">присоединяйтесь</h3>
+          <b class="footer-social-title">присоединяйтесь</b>
           <ul class="list social-network-list">
             <li class="social-network">
               <a href="#" class="social-network-link social-footer-link" aria-label="Instagram"
@@ -338,7 +338,30 @@
             </li>
           </ul>
         </div>
+
+        <form class="js-speaker-form">
+          <b class="footer-social-title">Подпишитесь на рассылку</b>
+          <input class="subscribe-input" type="email" name="mail" placeholder="E-mail" />
+          <button class="button subscribe-button" type="submit">
+            <span class="subscribe-button-text">Подписаться</span>
+            <svg class="subscribe-button-icon">
+              <use href="./images/icons.svg#icon-send"></use>
+            </svg>
+          </button>
+        </form>
       </div>
     </footer>
+
+    <script>
+      (() => {
+        document.querySelector('.js-speaker-form').addEventListener('submit', e => {
+          e.preventDefault();
+          new FormData(e.currentTarget).forEach((value, name) =>
+            console.log(`${name}:
+    ${value}`)
+          );
+        });
+      })();
+    </script>
   </body>
 </html>
