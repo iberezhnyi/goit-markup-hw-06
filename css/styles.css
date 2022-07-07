@@ -776,7 +776,8 @@ textarea {
   transition: fill var(--animate-time-function);
 }
 
-.modal-close-button:hover {
+.modal-close-button:hover,
+.modal-close-button:focus {
   fill: var(--accent-color);
 }
 
@@ -843,6 +844,8 @@ textarea {
   transition: fill var(--animate-time-function);
 }
 
+/* Modal form textarea */
+
 .modal-form-textarea {
   display: block;
 
@@ -884,6 +887,8 @@ textarea {
 
   transition: border var(--animate-time-function);
 }
+
+/* Modal form name, tel, email: hover, focus, animation */
 
 .modal-form-input:focus ~ .modal-form-label-text,
 .modal-form-input:hover ~ .modal-form-label-text,
@@ -934,6 +939,8 @@ textarea {
   border: 1px solid var(--accent-color);
 }
 
+/* Modal form policy */
+
 .modal-form-policy {
   position: relative;
   left: 31px;
@@ -941,6 +948,8 @@ textarea {
   display: block;
 
   margin-bottom: 30px;
+
+  cursor: pointer;
 }
 
 .link-policy {
@@ -966,7 +975,7 @@ textarea {
   border-radius: 2px;
   opacity: 1;
 
-  transition: opacity var(--animate-time-function);
+  transition: opacity var(--animate-time-function), border var(--animate-time-function);
 }
 
 .modal-form-icon-check {
@@ -988,6 +997,11 @@ textarea {
   transition: opacity var(--animate-time-function);
 }
 
+.modal-form-checkbox-input:hover + .modal-form-checkbox-icon,
+.modal-form-checkbox-input:focus + .modal-form-checkbox-icon {
+  border: 2px solid var(--accent-color);
+}
+
 .modal-form-checkbox-input:checked + .modal-form-checkbox-icon {
   opacity: 0;
 }
@@ -995,6 +1009,8 @@ textarea {
 .modal-form-checkbox-input:checked ~ .modal-form-icon-check {
   opacity: 1;
 }
+
+/* Modal form button */
 
 .send-form-button {
   display: block;
